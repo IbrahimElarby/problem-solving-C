@@ -1,0 +1,340 @@
+(1)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num1,num2;
+
+    while(1)
+    {
+        int sum = 0;
+        scanf("%d%d",&num1,&num2);
+        int temp;
+        if(num1>num2)
+        {
+            temp = num1;
+            num1 = num2;
+            num2 = temp;
+        }
+        for(int i = num1+1 ; i < num2 ;i++)
+        {
+            sum+=i;
+        }
+        printf("the sum is %d \n",sum);
+    }
+    return 0;
+}
+
+(2)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num,total;
+    while(1)
+    {
+        printf("what is the number of numbers you will enter");
+        scanf("%d",&total);
+        printf("enter the first number");
+        scanf("%d",&num);
+        int max =  num ,  min = num ;
+        for(int i = 0 ; i < total-1 ; i++)
+        {
+             printf("enter the number");
+             scanf("%d",&num);
+             if(num>max)
+             {
+                 max = num ;
+             }
+             if(num<min)
+             {
+                 min = num;
+             }
+        }
+        printf("the max is %d    and  the min is %d \n",max,min);
+    }
+    return 0;
+}
+(3)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num,total;
+    while(1)
+    {
+        printf("what is the number of numbers you will enter");
+        scanf("%d",&total);
+        int sum = 0;
+        for(int i = 0 ; i < total ; i++)
+        {
+             printf("enter the number");
+             scanf("%d",&num);
+            sum+= num;
+        }
+        printf("the sum is %d \n",sum);
+    }
+    return 0;
+}
+(4)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num1,num2;
+    while(1)
+    {
+        scanf("%d%d",&num1,&num2);
+        int mult = 0;
+        for(int i = 0 ; i < num1 ; i++)
+        {
+            mult+=num2;
+        }
+        printf("the multiplication of %d  and %d  is  %d \n",num1,num2,mult);
+    }
+    return 0;
+}
+(5)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num1,num2;
+    while(1)
+    {
+        scanf("%d%d",&num1,&num2);
+        int rem;
+       rem = num1 - (num1/num2)*num2;
+        printf("the reminder of division between %d  and %d  is  %d \n",num1,num2,rem);
+    }
+    return 0;
+}
+(6)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num1, num2;
+    while(1)
+    {
+        scanf("%d%d",&num1,&num2);
+        int power = 1;
+         for(int i = 0 ; i < num2 ; i++ )
+         {
+             power*=num1;
+         }
+        printf("the power %d  of the number %d  is  %d \n",num2,num1,power);
+    }
+    return 0;
+}
+(7)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num;
+    while(1)
+    {
+        do{
+        printf("enter positive integer");
+        scanf("%d",&num);
+        }while(num<=0);
+        int fact = 1;
+         for(int i = num ; i > 0 ; i-- )
+         {
+             fact*=i;
+         }
+        printf("the factorial of  %d  is  %d \n",num,fact);
+    }
+    return 0;
+}
+(8)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num;
+    while(1)
+    {
+        do{
+        printf("enter positive integer");
+        scanf("%d",&num);
+        }while(num<=0);
+        int rem = 1 ;
+        for(int i = num ; i > 1 ; i-- )
+        {
+            if(!(num == i))
+            {
+                rem = num % i;
+                if (!rem)
+                {
+                    printf("NOT a Prime number\n");
+                    break;
+                }
+            }
+        }
+        if(rem)
+        {
+            printf("Yes it is Prime number\n");
+        }
+    }
+    return 0;
+}
+(9)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num;
+    while(1)
+    {
+        do{
+        printf("enter positive integer");
+        scanf("%d",&num);
+        }while(num<=0);
+        int square = 0 ;
+        int temp = num*num;
+        for(int i = num ; i > 0 ; i-- )
+        {
+           square = num/(i*i);
+           temp = i*i;
+           if(square == 1 && num % (i*i) == 0 )
+           {
+               printf("Yes it is perfect square\n");
+               break;
+           }
+        }
+        if(!(square == 1 && num % temp == 0  ))
+        {
+            printf("NOT a Perfect Square\n");
+        }
+    }
+    return 0;
+}
+(10)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num;
+    while(1)
+    {
+        do{
+        printf("enter positive integer");
+        scanf("%d",&num);
+        }while(num<=0);
+        while(num % 2 == 0)
+        {
+            num=num/2;
+        }
+        if(num == 1)
+        {
+            printf("yes the number is base of two\n");
+        }
+        else
+        {
+            printf("no the number is not base of two\n ");
+        }
+
+            }
+    return 0;
+}
+(11)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num;
+    while(1)
+    {
+
+        scanf("%d",&num);
+        int sum = 0;
+        int temp =num;
+         while(num>0)
+         {
+             sum +=num%10;
+             num = num/10;
+         }
+         printf("the sum of the digits of %d is %d \n ",temp,sum);
+
+
+            }
+    return 0;
+}
+(12)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num;
+    while(1)
+    {
+
+
+        int sum = 0;
+        int odd = 0;
+         while(odd!=2)
+         {
+             scanf("%d",&num);
+             if(num%2 == 0)
+             {
+                 sum +=num;
+             }
+             else
+             {
+                 odd++;
+             }
+
+              printf("the sum of the even numbers  is %d \n ",sum);
+         }
+         printf("bye\n");
+
+            }
+    return 0;
+}
+(13)
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    int num;
+    while(1)
+    {
+
+        scanf("%d",&num);
+        int sum = 0;
+
+         while(num>0)
+         {
+             if(num%10 ==0 || num%10 ==4 || num%10 ==6 || num%10 ==9)
+             {
+                 sum++;
+             }
+             else if(num%10 == 8)
+             {
+                 sum+=2;
+             }
+
+             num = num/10;
+         }
+         printf("the sum of holes is %d \n ",sum);
+
+
+            }
+    return 0;
+}
+
